@@ -245,14 +245,16 @@ function DashboardLayout(props) {
     children,
     disableCollapsibleSidebar = false,
     slots,
-    slotProps
+    slotProps,
+    isExpanded,
+    onExpandedChange
   } = props;
   const theme = useTheme();
   const branding = React.useContext(BrandingContext);
   const navigation = React.useContext(NavigationContext);
   const appWindow = React.useContext(WindowContext);
   const applicationTitle = useApplicationTitle();
-  const [isDesktopNavigationExpanded, setIsDesktopNavigationExpanded] = React.useState(true);
+  const [isDesktopNavigationExpanded, setIsDesktopNavigationExpanded] = React.useState(isExpanded);
   const [isMobileNavigationExpanded, setIsMobileNavigationExpanded] = React.useState(false);
   const isUnderMdViewport = useMediaQuery(theme.breakpoints.down('md'), appWindow && {
     matchMedia: appWindow.matchMedia
@@ -265,6 +267,7 @@ function DashboardLayout(props) {
     if (isUnderMdViewport) {
       setIsMobileNavigationExpanded(newExpanded);
     } else {
+      onExpandedChange(newExpanded)
       setIsDesktopNavigationExpanded(newExpanded);
     }
   }, [isUnderMdViewport]);
