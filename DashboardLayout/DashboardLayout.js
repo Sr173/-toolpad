@@ -303,10 +303,10 @@ function DashboardLayout(props) {
   const isDesktopMini = !disableCollapsibleSidebar && !isDesktopNavigationExpanded;
   const isMobileMini = !disableCollapsibleSidebar && !isMobileNavigationExpanded;
   const getMenuIcon = React.useCallback(isExpanded => {
-    const expandMenuActionText = 'Expand';
-    const collapseMenuActionText = 'Collapse';
+    const expandMenuActionText = '展开';
+    const collapseMenuActionText = '折叠';
     return /*#__PURE__*/_jsx(Tooltip, {
-      title: `${isExpanded ? collapseMenuActionText : expandMenuActionText} menu`,
+      title: `${isExpanded ? collapseMenuActionText : expandMenuActionText} 菜单`,
       enterDelay: 1000,
       children: /*#__PURE__*/_jsx("div", {
         children: /*#__PURE__*/_jsx(IconButton, {

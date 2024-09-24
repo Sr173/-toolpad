@@ -26,7 +26,7 @@ function ThemeSwitcher() {
     setPaletteMode(paletteMode === 'dark' ? 'light' : 'dark');
   }, [paletteMode, setPaletteMode]);
   return isDualTheme ? /*#__PURE__*/_jsx(Tooltip, {
-    title: isSsr ? 'Switch mode' : `${paletteMode === 'dark' ? 'Light' : 'Dark'} mode`,
+    title: isSsr ? 'Switch mode' : `${paletteMode === 'dark' ? '明亮' : '黑暗'} 模式`,
     enterDelay: 1000,
     children: /*#__PURE__*/_jsx("div", {
       children: /*#__PURE__*/_jsx(IconButton, {
